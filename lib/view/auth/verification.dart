@@ -108,13 +108,6 @@ class Verification extends StatelessWidget {
                               highlightAnimationEndColor: Colors.white12,
                               keyboardType: TextInputType.number,
                             ),
-                            Visibility(
-                              child: Image.asset(
-                                "assets/img/done.png",
-                                height: 25,
-                              ),
-                              visible: controller.show.value,
-                            ),
                             const SizedBox(
                               width: 10,
                             )

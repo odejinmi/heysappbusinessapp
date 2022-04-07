@@ -12,10 +12,16 @@ class Personalinfocontroller extends GetxController {
   var isLoading = false.obs;
   var buttonposition = false.obs;
 
-  var emailController = TextEditingController().obs;
+  var firstnameController = TextEditingController().obs;
+  var lastnameController = TextEditingController().obs;
+  var businessnameController = TextEditingController().obs;
+  var businesssectorController = TextEditingController().obs;
   var referralController = TextEditingController().obs;
-  var passwordController = TextEditingController().obs;
-  var confirmpasswordController = TextEditingController().obs;
+  var countryController = TextEditingController().obs;
+  var cityController = TextEditingController().obs;
+  var streetaddressController = TextEditingController().obs;
+  var stateController = TextEditingController().obs;
+  var zipcodeController = TextEditingController().obs;
   // var size = Size.obs;
   var left=2.0.obs,right=0.0.obs;
   var formKey = GlobalKey<FormState>().obs;
@@ -31,7 +37,7 @@ class Personalinfocontroller extends GetxController {
 
       isLoading.value = true;
     var jsonBody = {
-      "emailphone":emailController.value.text,
+      "emailphone":firstnameController.value.text,
       "type": buttonposition.isTrue?"email":"phone"
     };
 
@@ -46,9 +52,9 @@ class Personalinfocontroller extends GetxController {
       otpcode = cmddetails['data'];
       isemail = buttonposition.value;
       if (buttonposition.value) {
-        email = emailController.value.text;
+        // email = emailController.value.text;
       }else{
-        phonenumber = emailController.value.text;
+        // phonenumber = emailController.value.text;
       }
       Get.to( ()=>Verification());
     } else {

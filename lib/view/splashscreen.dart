@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:heysappbusiness/view/auth/selectcountry.dart';
+import 'package:heysappbusiness/view/auth/signin/signin.dart';
 
 import '../controller/Splashscreencontroller.dart';
 
@@ -32,36 +34,47 @@ class Splashscreen extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      height: 50,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(Radius.circular(10)),
-                        border: Border.all(color: Colors.white)
-                      ),
-                      child: const Text("Sign Up",
-                        style: TextStyle(
-                          color: Colors.white,
-                            fontSize: 18, fontWeight: FontWeight.w500
+                    child: GestureDetector(
+                      child: Container(
+                        height: 50,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          border: Border.all(color: Colors.white)
+                        ),
+                        child: const Text("Sign Up",
+                          style: TextStyle(
+                            color: Colors.white,
+                              fontSize: 18, fontWeight: FontWeight.w500
+                          ),
                         ),
                       ),
+                      onTap: (){
+                        Get.to(()=>Selectcountry());
+                        Get.delete();
+                      },
                     ),
                   ),
                   const SizedBox(width: 30,),
                   Expanded(
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(Radius.circular(10)),
-                        border: Border.all(color: Colors.white),
-                        color: Colors.white
-                      ),
-                      child: const Text("Sign Up",
-                        style: TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.w500
+                    child: GestureDetector(
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          border: Border.all(color: Colors.white),
+                          color: Colors.white
+                        ),
+                        child: const Text("Sign In",
+                          style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w500
+                          ),
                         ),
                       ),
+                      onTap: (){
+                        Get.to(()=>Signin());
+                      },
                     ),
                   ),
                 ],
